@@ -1,0 +1,30 @@
+
+.card{
+    background-image: url("../../assets/moon.png");
+    width: 30%;
+    height: 400px;
+    align-items: center;
+    background-position: center;
+     background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;    
+}
+.card-body{
+    margin-top: 200px;
+}
+.header{
+    display: flex; 
+    flex-direction: row;
+}
+.heaader{
+    background-color: green;
+    border-radius: 10px;
+    opacity: 0.4;
+
+}
+.button{
+    position: relative;
+    top: 0;
+    
+}
+
