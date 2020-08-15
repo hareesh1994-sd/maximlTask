@@ -8,5 +8,21 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'maximl';
-}
+  numberOfElements = 9;
+  dashBoardList = [];
 
+  constructor() {
+    this.configComponent();
+  }
+
+  configDashBoardElement(): void {
+    this.dashBoardList = [];
+    this.configComponent();
+  }
+
+  configComponent(): void {
+    for (let i = 0; i < this.numberOfElements; i++) {
+      this.dashBoardList.push(i);
+    }
+  }
+}

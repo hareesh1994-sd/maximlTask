@@ -1,14 +1,31 @@
-
-<div class="weather__header">
-  <div class="card">
-      <div class="card-body ">
-          <input [(ngModel)]="cityName" type="text" name="name" id="name" />
-          <button class="button"  (click)="myfunction()"type="submit">Submit</button>
+<div class="card card-bg" [ngClass]="{'invalid-city' : invalidCity}">
+  <div class="card-body">
+      <div *ngIf="!editWeather"><span class="align-right edit" (click)="toggle()"></span></div>
+      <div *ngIf="editWeather">
+          <div class="row">
+              <div class="col-md-8">
+                <input type="text" class="form-control" id="cityName" placeholder="Enter City Name" [(ngModel)]="cityName">
+              </div>
+              <div class="col-md-4">
+                <button type="button" class="btn btn-primary" (click)="fetchWeatherInfo()" [disabled]="!cityName">Fetch</button>
+              </div>
+          </div>
       </div>
-  </div>
-
+      <div *ngIf="!editWeather">
+        <div class="row">
+          <div class="col-md-12">
+            <img [src]="weatherStausIcon"> <span class="temp"><strong>{{weatherData.main.temp}}°C</strong></span>
+          </div>
+          <div class="row">
+              <div class="col-md-12 font">
+                Feels like {{weatherData.main.temp_max}}°C {{weatherData.weather[0].main}} Gentle Breeze 
+                <div col-md-12 font>{{weatherData.name}} , {{weatherData.sys.country}}</div>
+              </div>
+          </div>
+        </div>
+    </div>
+    <div *ngIf="invalidCity"> Invalid City Entered Please check entered city.</div>
 </div>
-
 
 
 

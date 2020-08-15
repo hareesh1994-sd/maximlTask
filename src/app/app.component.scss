@@ -1,0 +1,7 @@
+.main-container {
+    margin: 0 0 0 130px;
+    &.no-padding {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
